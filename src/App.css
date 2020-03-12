@@ -1,55 +1,102 @@
 h1 {
-  color: white;
+  color: #1DB954;
   padding-left: 15px;
   margin-top: 15px;
+  /* font-family: 'Source Code Pro', monospace; */
+  /* font-weight: 500; */
+}
+
+h3 {
+  font-family: 'Source Code Pro', monospace;
+}
+
+h5 {
+  color: #1DB954;
+  font-family: 'Source Code Pro', monospace;
 }
 
 h6 {
   padding-left: 20px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Source Code Pro', monospace; 
   color: white;
 }
 
-hr {
-  background-color: white;
+.green-rule {
+  background-color: #1DB954;
 }
 
 .new-acct-card {
-  background-color: rgba(255, 255, 255, 0.596);
+  /* background-color: rgba(255, 255, 255, 0.596); */
   border-radius: 20px;
   padding: 15px;
   text-align: center;
+  border: 1px solid lightgray;
+  /* height: 90%; */
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .new-acct-card hr {
-  background-color: black;
+  background-color: #1DB954;
 }
 
-.btn.btn-dark {
+.col-md-5 {
+  text-align: right;
+}
+
+.fa-check-circle {
+  font-size: 36px;
+  color: #1DB954;
+}
+
+.under-card-btn {
+  width: 40%;
+  font-family: 'Source Code Pro', monospace;
+  /* margin-bottom: 1rem; */
+}
+
+.btn-div {
+  margin-bottom: 1rem;
+}
+
+.btn.btn-success, .btn.btn-outline-success {
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 20px;
 }
 
+.btn.btn-outline-danger {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-family: 'Source Code Pro' monospace;
+}
+
 .results-card {
   width: 100%;
   min-height: 250px;
-  border: 1px solid black;
-  border-radius: 20px;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin-top: 1rem;
-  padding-top: 15px;
-  background-color: rgba(0, 0, 0, 0.692);
+  /* padding-top: 15px; */
+  padding: 15px;
+  padding-bottom: 5px;
+  /* background-color: rgba(0, 0, 0, 0.692); */
+  background-color: #4d4d4d;
   color: white;
+}
+
+.results-card hr {
+  background-color: white;
 }
 
 pre {
   color: white;
   padding-left: 20px;
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
 }
 
 .warning-div {
@@ -65,11 +112,21 @@ iframe {
   text-align: center;
   padding: 15px;
   color: white;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+}
+
+.warning-card ul {
+  padding-right: 1rem;
 }
 
 .warning-card ul li {
-  text-align: left;
+  text-align: justify;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.sublist li {
+  font-size: 14px;
 }
 
 .warning-card p {
@@ -81,6 +138,161 @@ footer {
 }
 
 #code-poet-sig {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Source Code Pro', monospace;  /* color: white; */
+}
+
+.track-card, .album-card {
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  max-width: 150px;
+}
+
+.track-card {
+  width: 150px;
+}
+
+.album-card {
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  background-position: 50%;
+  background-size: 100%;
+}
+
+.album-card-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+  display: none;
+  border-radius: 5px;
+}
+
+.album-card-overlay:hover {
+  display: block;
+}
+
+.playlist-card {
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+  background-position: 50%;
+  background-size: 100%;
+}
+
+.artist-card {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+  background-position: 50%;
+  background-size: 100%;
+  border-radius: 100px;
+  text-align: center;
+  background-color: white;
+}
+
+.track-card h6, .album-card h6, .playlist-card h6, .artists h6 {
+  color: darkslategray;
+  padding: 2px;
+  margin: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+}
+
+.artists h6 {
   color: white;
+  margin-bottom: 15px;
+}
+
+.artists {
+  text-align: center;
+}
+
+.track-card p, .album-card p, .playlist-card p {
+  color: gray;
+  margin: 0px;
+  font-size: 12px;
+}
+
+.playlist-card h6 {
+  /* background-color: rgba(255, 255, 255, 0.747); */
+  /* border-radius: 5px; */
+  color: black;
+}
+
+.playlist-card p {
+  /* background-color: rgba(255, 255, 255, 0.747); */
+  /* border-radius: 5px; */
+  color: darkslategray;
+  /* margin-top: 2px; */
+}
+
+.playlist-text {
+  background-color: rgba(255, 255, 255, 0.829);
+  border-radius: 5px;
+}
+
+.tracks, .albums, .playlists, .artists {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.react-tabs__tab--selected {
+  color: #1DB954;
+  font-weight: bold;
+}
+
+#green-name {
+  color: #1DB954;
+}
+
+.welcome-card {
+  /* border: 1px solid #1DB954; */
+  background-color: #1DB954;
+  border-radius: 20px;
+  /* height: 90%; */
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.welcome-card h3 {
+  /* color: #1DB954; */
+  color: white;
+}
+
+.welcome-card hr {
+  /* background-color: #4d4d4d; */
+  background-color: white;
+}
+
+.welcome-card p {
+  /* color: #1DB954; */
+  /* text-align: left; */
+  line-height: .75;
+  color: white;
+}
+
+.success-div {
+  border: 1px solid #1DB954;
+  /* width: 50%; */
+  border-radius: 20px;
+  padding-top: 10px;
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
