@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from "react-redux";
 
 const authorize_existing = (props) => {
-    const authorize = () => {
+    const authorizeExisting = () => {
         props.toggleLoadData(true);    
         // TODO: For user selecting what data they would like to migrate via checkboxes,
         //       send to back via params
-        window.location = "http://localhost:3500/login";
+        window.location = "http://localhost:3500/login/existing";
     }
     return (
         <div className="col-md-5">
@@ -29,13 +29,13 @@ const authorize_existing = (props) => {
                     props.dataAdded ?
                       <div>
                         <div className="success-div">
-                          <i class="far fa-check-circle"></i>
+                          <i className="far fa-check-circle"></i>
                           <h5>Success!</h5>
                         </div>
                         <p>Review the results below before continuing.</p>
                       </div> :
                     // put a 'Restart' button somewhere when userData exists
-                      <button className="btn btn-outline-success" onClick={() => authorize()}>GET DATA</button>
+                      <button className="btn btn-outline-success" onClick={() => authorizeExisting()}>GET DATA</button>
                 }
             </div>
             {/* TODO: This button group should just be its own */}

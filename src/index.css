@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #1DB954; */
+  /* background-image: url("./images/leaves.jpg");
+  background-size: contain; */
 }
 
 code {

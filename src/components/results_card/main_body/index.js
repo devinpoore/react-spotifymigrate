@@ -13,7 +13,7 @@ const results_card = (props) => {
                 {props.authLoadData ?
                     <h3>Retrieving account data...</h3> :
                     props.userData.user.display_name ?
-                        <h3>Results for <span id="green-name">{props.userData.user.display_name ? props.userData.user.display_name.split(" ")[0] : ""}</span>:</h3> :
+                        <h3>Results for <span className="green-text">{props.userData.user.display_name.split(" ")[0]}</span> from account #<span className="green-text">{props.userData.user.id}</span>:</h3> :
                         <h3>Results:</h3>
                 }
 
@@ -32,7 +32,7 @@ const results_card = (props) => {
                                 <div className="tracks">
                                     {props.userData.savedTracks.map(trackData => {
                                         return (
-                                            <div className="track-card">
+                                            <div className="track-card" key={trackData.id}>
                                                 <h6>"{trackData.name}"</h6>
                                                 <p>{trackData.artist}</p>
                                                 <p><i>{trackData.album}</i></p>
@@ -46,7 +46,7 @@ const results_card = (props) => {
                                 <div className="albums">
                                     {props.userData.savedAlbums.map(albumData => {
                                         return (
-                                            <div className="album-card" style={{ backgroundImage: albumData.coverURL ? `url(${albumData.coverURL})` : "none" }}>
+                                            <div className="album-card" key={albumData.id} style={{ backgroundImage: albumData.coverURL ? `url(${albumData.coverURL})` : "none" }}>
                                                 <div className="album-card-overlay">
                                                     <h6><i>{albumData.name}</i></h6>
                                                     <p>{albumData.artist}</p>
@@ -61,7 +61,7 @@ const results_card = (props) => {
                                 <div className="artists">
                                     {props.userData.following.map(artistData => {
                                         return (
-                                            <div>
+                                            <div key={artistData.id}>
                                                 <div className="artist-card" style={{ backgroundImage: artistData.pictureURL ? `url(${artistData.pictureURL})` : "none" }}></div>
                                                 <h6>{artistData.name}</h6>
                                             </div>
@@ -75,7 +75,7 @@ const results_card = (props) => {
                                 <div className="playlists">
                                     {props.userData.playlists.map(playlistData => {
                                         return (
-                                            <div className="playlist-card" style={{ backgroundImage: playlistData.coverURL ? `url(${playlistData.coverURL})` : "none" }}>
+                                            <div className="playlist-card" key={playlistData.id} style={{ backgroundImage: playlistData.coverURL ? `url(${playlistData.coverURL})` : "none" }}>
                                                 <div className="playlist-text">
                                                     <h6>{playlistData.name}</h6>
                                                     <p>{playlistData.description ? playlistData.description : ""}</p>

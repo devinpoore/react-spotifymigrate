@@ -2,43 +2,44 @@ import React from 'react';
 import { connect } from "react-redux";
 
 const authorize_new = (props) => {
-    const authorize = () => {
-        props.toggleLoadData(true);    
+    const authorizeNew = () => {
+        props.toggleLoadData(true);
+        sessionStorage.setItem("spotifyMigrateUserData", JSON.stringify(props.userData));
+
         // TODO: For user selecting what data they would like to migrate via checkboxes,
         //       send to back via params
-        window.location = "http://localhost:3500/login";
+        window.location = "http://localhost:3500/login/new";
     }
     return (
         <div className="col-md-5">
             <div className="new-acct-card">
-                <h3>4. MIGRATE DATA</h3>
+                <h3>4. AUTHORIZE</h3>
                 <hr />
                 <p>
                     Authorize access to your newly created account so that the data collected below
                     can be migrated to it.
                 </p>
-                <button className="btn btn-outline-success" onClick={() => authorize()}>GET DATA</button>
+                {/* <button className="btn btn-outline-success" onClick={() => authorizeNew()}>GET DATA</button> */}
 
-                {/* {props.authLoadData ?
+                {props.authLoadData ?
                     <div className="spinner-border text-success" role="status">
                         <span className="sr-only">Loading...</span>
                     </div> :
-                    props.dataAdded ?
+                    props.newAuth ?
                       <div>
                         <div className="success-div">
-                          <i class="far fa-check-circle"></i>
+                          <i className="far fa-check-circle"></i>
                           <h5>Success!</h5>
                         </div>
-                        <p>Review the results below before continuing.</p>
-                      </div> :
-                    // put a 'Restart' button somewhere when userData exists
-                      <button className="btn btn-outline-success" onClick={() => authorize()}>GET DATA</button>
-                } */}
+                        {/* <p>Review the results below before continuing.</p> */}
+                      </div> :               
+                      <button className="btn btn-outline-success" onClick={() => authorizeNew()}>AUTHORIZE</button>
+                }
             </div>
             {/* TODO: This button group should just be its own */}
             <div className="btn-div">
                 <button className="btn btn-outline-danger" onClick={props.previousCard}>back</button>
-                <button className="btn btn-success under-card-btn" onClick={props.nextCard} disabled={!props.dataAdded}>next</button>
+                <button className="btn btn-success under-card-btn" onClick={props.nextCard} disabled={!props.newAuth}>next</button>
             </div>
         </div>
     )
@@ -56,7 +57,8 @@ const mapDispatchToProps = dispatch => {
     return {
       userData: state.userData,
       authLoadData: state.authLoadData,
-      dataAdded: state.dataAdded
+      dataAdded: state.dataAdded,
+      newAuth: state.newAuth
     };
   }
   export default connect(mapStateToProps, mapDispatchToProps)(authorize_new);

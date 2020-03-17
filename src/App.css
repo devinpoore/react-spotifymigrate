@@ -1,7 +1,7 @@
 h1 {
   color: #1DB954;
-  padding-left: 15px;
-  margin-top: 15px;
+  /* padding-left: 15px; */
+  margin-top: 10px;
   /* font-family: 'Source Code Pro', monospace; */
   /* font-weight: 500; */
 }
@@ -255,7 +255,7 @@ footer {
   font-weight: bold;
 }
 
-#green-name {
+.green-text {
   color: #1DB954;
 }
 
@@ -295,4 +295,76 @@ footer {
   display: inline-block;
   margin: 0 auto;
   margin-bottom: 1rem;
+}
+
+.repo-btn-div {
+  text-align: right;
+  height: 100%;
+  width: 100%;
+  padding: 3% 0;
+}
+
+.repo-btn-div .btn.btn-outline-success {
+  margin-left: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 5px;
+}
+
+.fa-react, .fa-github, .fa-node-js {
+  margin: 5px;
+  font-size: 20px;
+}
+
+.no-top-margin {
+  margin-top: 5px;
+}
+
+#port-link {
+  color: #1DB954;
+  text-decoration: none;
+}
+
+#port-link:hover {
+  color: rgb(24, 151, 69);
+}
+
+/* .container {
+  background-color: white;
+} */
+
+.migration-card {
+  line-height: 1.25;
+  /* border: 1px solid #1DB954; */
+  border-radius: 20px;
+  padding: 5px;
+  margin: 0 auto;
+  margin: 5px;
+  width: 100%;
+}
+
+.migration-card p {
+  margin: 0;
+  font-family: 'Source Code Pro', monospace;
+  color: #1DB954;
+}
+
+.blue p {
+  /* color: rgba(71, 71, 255, 0.74); */
+}
+
+.migration-card h5 {
+  color: #4d4d4d;
+  /* text-align: left; */
+}
+
+.account-info-card {
+  border: 1px solid #1DB954;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 0 auto;
+  width: 75%;
 }

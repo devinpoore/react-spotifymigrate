@@ -6,19 +6,20 @@ const initialState = {
         playlists: [],
         following: []
     },
+    newUserData: {},
     authLoadData: false,
     step: 0,
-    dataAdded: false
+    dataAdded: false,
+    newAuth: false,
+    migrationComplete: false
 };
 
 const reducer = (state = initialState, action) => {
     const newState = {...state};
 
     if (action.type === "TOGGLE_LOAD") {
-        console.log("\nchanging authLoadData in redux store to true...\n");
         newState.authLoadData = action.bool;
     } else if (action.type === "SET_USER_DATA") {
-        console.log("\nsetting user data in redux store...\n");
         newState.userData = action.userData;
     } else if (action.type === "NEXT_CARD") {
         newState.step++;
@@ -28,6 +29,10 @@ const reducer = (state = initialState, action) => {
         newState.dataAdded = true;
     } else if (action.type === "SET_STEP") {
         newState.step = action.step;
+    } else if (action.type === "NEW_AUTH") {
+        newState.newAuth = true;
+    } else if (action.type === "NEW_USER") {
+        newState.newUserData = action.newUserData;
     }
 
     return newState;
